@@ -1,0 +1,16 @@
+# Environment variables - never upload this
+.env 
+
+# Raw and transformed data files
+data/
+
+# python cache
+__pycache__/
+*.pyc 
+*.pyo 
+
+# VS Code settings
+.vscode/
+
+# Mac system files
+.DS_Store
