@@ -12,7 +12,7 @@ API (disease.sh) -> Extract -> Transform -> Load -> PostgreSQL Database
 
 ## 🛠️ Tools & Technologies
 
-- **Python* - Core programming language 
+- **Python** - Core programming language 
 - **Pandas** - Data transformation and manipulation
 - **SQLAlchemy** - Database connection and ORM
 - **PostgreSQL** - Relational database for storing cleaned data
@@ -23,15 +23,16 @@ API (disease.sh) -> Extract -> Transform -> Load -> PostgreSQL Database
 
 ## 📁 Project Structure
 
-etl-covid-pipeline/
-├── data/                    # Raw and transformed data (not uploaded to GitHub)
-├── extract.py               # Extracts data from COVID-19 API
-├── transform.py             # Cleans and transforms raw data
-├── load.py                  # Loads transformed data into PostgreSQL
-├── main.py                  # Runs the full ETL pipeline
-├── .env                     # Database credentials (not uploaded to GitHub)
-├── .gitignore               # Files excluded from GitHub
-└── README.md                # Project documentation
+| File/Folder | Description |
+|---|---|
+| `extract.py` | Extracts live data from COVID-19 API |
+| `transform.py` | Cleans and transforms raw data |
+| `load.py` | Loads transformed data into PostgreSQL |
+| `main.py` | Runs the full ETL pipeline end to end |
+| `data/` | Stores raw and transformed data files (not uploaded to GitHub) |
+| `.env` | Database credentials (not uploaded to GitHub) |
+| `.gitignore` | Files excluded from GitHub |
+| `README.md` | Project documentation |
 
 ---
 
@@ -62,7 +63,7 @@ DB_NAME=covid_etl
 DB_USER=your_username
 DB_PASSWORD=
 
-**5. Run the pipeline
+**5. Run the pipeline**
 ```bash
 python3 main.py
 ```
@@ -81,9 +82,9 @@ python3 main.py
 
 ## 📈 Key Metrics Calculated
 
-- ** Death Rate %** - Total deaths / Total cases
-- ** Recovery Rate %** - Total recovered / Total cases
-- ** Tests per Million** - Total tests / population * 1,000,000
+- **Death Rate %** - Total deaths / Total cases
+- **Recovery Rate %** - Total recovered / Total cases
+- **Tests per Million** - Total tests / population * 1,000,000
 
 ## 👨‍💻 Author
 
