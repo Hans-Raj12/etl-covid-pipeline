@@ -35,6 +35,32 @@ API (disease.sh) -> Extract -> Transform -> Load -> PostgreSQL Database
 | `README.md` | Project documentation |
 
 ---
+## 🐳 Run with Docker (Recommended)
+
+The easiest way to run this project — no local Python or PostgreSQL setup needed.
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/Hans-Raj12/etl-covid-pipeline.git
+cd etl-covid-pipeline
+```
+
+**2. Start the pipeline**
+```bash
+docker-compose up --build
+```
+
+That's it! Docker will automatically:
+- Spin up a PostgreSQL database
+- Install all Python dependencies
+- Run the full ETL pipeline
+
+**3. Stop the containers**
+```bash
+docker-compose down
+```
+
+---
 
 ## ⚙️ How to Run This Project
 
