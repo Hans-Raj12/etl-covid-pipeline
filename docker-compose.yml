@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  #postgreSQL Database
+  postgres:
+    image: postgres:15
+    container_name: covid_postgres
+    environment:
+      POSTGRES_DB: covid_etl
+      POSTGRES_USER: hansraaj
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hansraaj -d covid_etl"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  
+  #etl pipeline
+  etl:
+    build: .
+    container_name: covid_etl
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: covid_etl
+      DB_USER: hansraaj
+      DB_PASSWORD: postgres123
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

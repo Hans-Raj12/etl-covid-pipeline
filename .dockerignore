@@ -1,0 +1,7 @@
+# don't copy these into the container
+.env
+data/
+__pycache__/
+*.pyc
+.git
+.gitignore

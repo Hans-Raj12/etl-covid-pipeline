@@ -27,7 +27,10 @@ def load_data():
     # Load tranformed data
     df = pd.read_csv("data/transformed_data.csv")
 
-    # Load into postgreSQL
+    with engine.connect() as conn:
+        conn.execute(text("DROP TABLE IF EXISTS covid_data CASCADE"))
+        conn.commit()
+
     df.to_sql(
         name="covid_data",
         con=engine,
